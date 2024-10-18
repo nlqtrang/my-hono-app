@@ -1,4 +1,4 @@
-// src/routes/book.ts
+
 import { Hono } from 'hono';
 import { Book } from '../models/Book';
 import { jwtMiddleware, requireAdminRole } from '../middleware/auth';

@@ -20,6 +20,15 @@ connectDB();
 app.route('/users', userRoute);
 app.route('/books', bookRoute); 
 
+app.all('*', (c) => {
+  throw new Error('Route not found');
+});
+
+app.onError((err, c) => {
+  console.error(`${err}`)
+  return c.json({ message: err.message }, 500)
+})
+
 const port = 3000
 console.log(`Server is running on port ${port}`)
 

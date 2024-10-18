@@ -7,7 +7,6 @@ const JWT_SECRET = 'your_secret_key';
 // Tạo JWT từ thông tin người dùng
 export const generateToken = async (user: IUser) => {
   const payload = {
-    id: user.id,
     role: user.role,
     username: user.username,
     exp: Math.floor(Date.now() / 1000) + 60 * 5, // Token hết hạn sau 5 phút
